@@ -128,11 +128,9 @@ Bash
 ```
 # Train on SARS-CoV-2 sequences
 python bindingResNet_trainer_SARS2S1_SARSMERSesm2.py
-python bindingResNet_trainer_SARS2S1_SARSMERSesm2_part1.py
 
 # Train on MERS-CoV and SARS-CoV sequences
 python bindingResNet_trainer_SARSMERSS1_SARSMERSesm2.py
-python bindingResNet_trainer_SARSMERSS1_SARSMERSesm2_part1.py
 ```
 
 ### Step 4.3: Model Prediction
