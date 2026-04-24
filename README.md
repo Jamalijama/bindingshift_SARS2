@@ -1,10 +1,12 @@
 # Binding shift prediction of SARS-CoV-2
-
+Please download the complete dataset, model, and code in the Code Ocean (https://codeocean.com/capsule/0361003/tree) before running the following codes.
 This repository provides a complete pipeline for fine-tuning the ESM-2 protein language model, extracting embeddings for coronavirus sequences (SARS-CoV-2, SARS-CoV, MERS-CoV, and pseudoviruses), evaluating embedding performance, and training a predictive model.
+
+Before running the code, please extract the datasets in the 'data' folder. For the multi-part model archives in the 'predictor' folder, please ensure you have downloaded all parts into the same directory, then simply extract the first file (the 01 file), and the rest will be extracted automatically.
 
 ## Prerequisites
 
-Before running the pipeline, please download the **ESM-2 650M model** and place it in the main directory of this repository.
+Before running the pipeline, please download the **ESM-2 650M model** (https://huggingface.co/facebook/esm2_t33_650M_UR50D) and place it in the main directory of this repository.
 
 ------
 
@@ -100,6 +102,7 @@ python for_cluster_index_random_withPCA2_label1.py
 ------
 
 ## 4. Prediction Model (BindingResNet)
+Please first copy the `checkpoint-600` files from the `embedding/embedding_SARSMERS_esm2MERSSARS` and `embedding/embedding_SARS2_esm2MERSSARS` directories to the `data` folder. Then, rename them to `checkpoint-600_SARSMERSembedding_SARSMERSesm2.pkl` and `checkpoint-600_SARS2S1embedding_SARSMERSesm2.pkl`, respectively.
 
 All modeling scripts are located in the `predictor` folder. This module handles data loading, model training, and final predictions.
 
